@@ -16,6 +16,13 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
+# define HEXA 16
+# define HEXA_UPPER -16
+# define OCTAL 8
+# define OCTAL_UPPER -8
+# define BINARY 2
+# define DECIMAL 10
+
 
 typedef struct		s_list
 {
@@ -25,6 +32,9 @@ typedef struct		s_list
 }					t_list;
 
 char				*ft_lsttstr_del(t_list **list);
+void				ft_unicode_putchar(int c);
+int					ft_numlen(long long num, int base, size_t size);
+int					ft_unumlen(unsigned long long num);
 t_list				*ft_lstnew_ptr(void const *content, size_t content_size);
 char				*ft_strcat(char *dst, const char *src);
 char				*ft_strjoin_free(char const *s1, char const *s2);

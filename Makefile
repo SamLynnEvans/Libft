@@ -63,6 +63,9 @@ ft_strsub.c \
 ft_strtrim.c \
 ft_tolower.c \
 ft_toupper.c \
+ft_unicode_putchar.c \
+ft_numlen.c \
+ft_putstrn.c \
 
 OBJ = $(SRC:.c=.o)
 
