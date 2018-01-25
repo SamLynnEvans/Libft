@@ -69,13 +69,21 @@ ft_putstrn.c \
 
 OBJ = $(SRC:.c=.o)
 
+CPPFLAGS = -Ilibft.h
+
+DEPS = libft.h
+
 NAME = libft.a
+
+FLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	gcc -c -Wall -Wextra -Werror $(SRC) -Ilibft.h
-	ar rc $(NAME) $(OBJ)
+	ar rc $@ $^
+
+%o : %.c $(DEPS)
+	gcc $(FLAGS) -c $< $(CPPFLAGS)
 
 clean:
 	rm -f $(OBJ)
@@ -83,4 +91,6 @@ clean:
 fclean: clean
 	rm -f $(NAME)
 
-re: fclean all
+re: 
+	$(MAKE) fclean
+	$(MAKE) all
